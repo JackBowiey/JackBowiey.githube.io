@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Estilos de encabezado */
+        h1, h2 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            color: #FF4868;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos de párrafo */
+        p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Estilos de contenedor principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Estilos de caja */
+        .box {
+            padding: 30px;
+            margin-bottom: 40px;
+            background-color: #FF8C00;
+            border: 1px solid #FF4868;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Estilos de botón */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF4868;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Estilos de producto */
+        .producto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .producto img {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .producto .nombre {
+            font-size: 18px;
+            color: #FF4868;
+            margin-bottom: 5px;
+        }
+
+        .producto .precio {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        /* Estilos de carrito */
+        #carrito {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        #carrito h2 {
+            color: #FF4868;
+            margin-bottom: 10px;
+        }
+
+        #carrito ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #carrito ul li {
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        #total {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #FF4868;
+        }
+
+        /* Estilos de vaciar carrito */
+        #vaciar-carrito {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #vaciar-carrito .button {
+            background-color: #FF8C00;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulación de Carrito de Compras</h1>
+
+    <div class="producto">
+        <img src="producto1.jpg" alt="Producto 1">
+        <div class="nombre">Producto 1</div>
+        <div class="precio">$10.00</div>
+        <button onclick="agregarAlCarrito(10)">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="producto2.jpg" alt="Producto 2">
+        <div class="nombre">Producto 2</div>
+        <div class="precio">$15.00</div>
+        <button onclick="agregarAlCarrito(15)">Agregar al Carrito</button>
+    </div>
+
+    <!-- Agregar más productos -->
+    <div class="producto">
+        <img src="producto3.jpg" alt="Producto 3">
+        <div class="nombre">Producto 3</div>
+        <div class="precio">$20.00</div>
+        <button onclick="agregarAlCarrito(20)">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="producto4.jpg" alt="Producto 4">
+        <div class="nombre">Producto 4</div>
+        <div class="precio">$25.00</div>
+        <button onclick="agregarAlCarrito(25)">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="producto5.jpg" alt="Producto 5">
+        <div class="nombre">Producto 5</div>
+        <div class="precio">$30.00</div>
+        <button onclick="agregarAlCarrito(30)">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="producto6.jpg" alt="Producto 6">
+        <div class="nombre">Producto 6</div>
+        <div class="precio">$35.00</div>
+        <button onclick="agregarAlCarrito(35)">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="producto7.jpg" alt="Producto 7">
+        <div class="nombre">Producto 7</div>
+        <div class="precio">$40.00</div>
+        <button onclick="agregarAlCarrito(40)">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="producto8.jpg" alt="Producto 8">
+        <div class="nombre">Producto 8</div>
+        <div class="precio">$45.00</div>
+        <button onclick="agregarAlCarrito(45)">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="producto9.jpg" alt="Producto 9">
+        <div class="nombre">Producto 9</div>
+        <div class="precio">$50.00</div>
+        <button onclick="agregarAlCarrito(50)">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="producto10.jpg" alt="Producto 10">
+        <div class="nombre">Producto 10</div>
+        <div class="precio">$55.00</div>
+        <button onclick="agregarAlCarrito(55)">Agregar al Carrito</button>
+    </div>
+    
+    <div id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <div id="total">Total: $0.00</div>
+        <div id="vaciar-carrito">
+            <button class="button" onclick="vaciarCarrito()">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <script>
+        let carrito = [];
+        let total = 0;
+
+        function agregarAlCarrito(precio) {
+            carrito.push(precio);
+            total += precio;
+
+            actualizarCarrito();
+        }
+
+        function vaciarCarrito() {
+            carrito = [];
+            total = 0;
+
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito() {
+            const listaCarrito = document.getElementById("lista-carrito");
+            listaCarrito.innerHTML = "";
+
+            carrito.forEach(precio => {
+                const li = document.createElement("li");
+                li.textContent = "$" + precio.toFixed(2);
+                listaCarrito.appendChild(li);
+            });
+
+            const totalElement = document.getElementById("total");
+            totalElement.textContent = "Total: $" + total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
